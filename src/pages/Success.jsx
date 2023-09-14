@@ -1,0 +1,26 @@
+import React, { useEffect, useState } from "react";
+import { PropagateLoader } from "react-spinners";
+const Success = () => {
+  const [loding, setLoding] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoding(false);
+    }, 3000);
+  });
+  return (
+    <div className="flex flex-col items-center justify-center h-screen">
+      {loding ? (
+        <PropagateLoader color="#36d7b7" />
+      ) : (
+        <div>
+          <h2 className="text-3xl m-4 font-semibold text-center">
+            Order Successfull
+          </h2>
+          <p>Your order has been successfully placed</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Success;
